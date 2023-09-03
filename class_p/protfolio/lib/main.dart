@@ -14,7 +14,7 @@ void main() {
             fontSize: 20,
           ),
         ),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: MyApp(
             Color.fromARGB(231, 255, 255, 255),
             Color.fromARGB(231, 255, 255, 255),

@@ -3,9 +3,19 @@ import 'package:portfolio_1/src/about.dart';
 import 'package:portfolio_1/src/home.dart';
 import 'package:portfolio_1/src/menu.dart';
 
-void main() => runApp(const MaterialApp(
+void main() => runApp(MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
+          // ···
+          brightness: Brightness.dark,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: ProfileApp(),
+      home: const ProfileApp(),
     ));
 
 class ProfileApp extends StatefulWidget {
@@ -39,71 +49,219 @@ class _ProfileAppState extends State<ProfileApp> {
           child: Column(
             children: [
               Container(
-                height: 200,
-                padding: const EdgeInsets.only(top: 50),
+                height: 80,
+                padding: const EdgeInsets.only(top: 10),
                 width: MediaQuery.sizeOf(context).width,
-                decoration: const BoxDecoration(color: Colors.amber),
-                child: Column(
+                margin: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          child: Image.asset(
-                            'asset/diamond.png',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Positioned(
-                          top: 25,
-                          left: 25,
-                          child: Container(
-                            height: 20,
-                            width: 20,
-                            decoration: const BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20 / 2),
-                              ),
+                    Column(
+                      children: <Widget>[
+                        Stack(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.black,
+                              backgroundImage: AssetImage('asset/ment_1.png'),
+                              radius: 30.0,
                             ),
-                          ),
-                        )
+                            Positioned(
+                              top: 45,
+                              left: 45,
+                              child: Container(
+                                height: 15,
+                                width: 15,
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20 / 2),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Title(
+                            color: Colors.white,
+                            child: TextButton(
+                              child: const Text(
+                                'Alexis',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                              onPressed: () {},
+                            ))
                       ],
                     )
                   ],
                 ),
               ),
               Container(
-                height: 200,
-                padding: const EdgeInsets.only(top: 50),
+                height: 80,
+                padding: const EdgeInsets.only(top: 10),
                 width: MediaQuery.sizeOf(context).width,
+                margin: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 153, 152, 152)),
-                child: Column(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          child: Image.asset(
-                            'asset/coal.png',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Positioned(
-                            left: 25,
-                            top: 25,
-                            child: Container(
-                              height: 20,
-                              width: 20,
-                              decoration: const BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20 / 2),
+                    Column(
+                      children: <Widget>[
+                        Stack(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.black,
+                              backgroundImage: AssetImage('asset/ment_1.png'),
+                              radius: 30.0,
+                            ),
+                            Positioned(
+                              top: 45,
+                              left: 45,
+                              child: Container(
+                                height: 15,
+                                width: 15,
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20 / 2),
+                                  ),
                                 ),
                               ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Title(
+                            color: Colors.white,
+                            child: TextButton(
+                              child: const Text(
+                                'Alexis',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                              onPressed: () {},
+                            ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: 80,
+                padding: const EdgeInsets.only(top: 10),
+                width: MediaQuery.sizeOf(context).width,
+                margin: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: <Widget>[
+                        Stack(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.black,
+                              backgroundImage: AssetImage('asset/ment_1.png'),
+                              radius: 30.0,
+                            ),
+                            Positioned(
+                              top: 45,
+                              left: 45,
+                              child: Container(
+                                height: 15,
+                                width: 15,
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20 / 2),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Title(
+                            color: Colors.white,
+                            child: TextButton(
+                              child: const Text(
+                                'Alexis',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                              onPressed: () {},
+                            ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: 80,
+                padding: const EdgeInsets.only(top: 10),
+                width: MediaQuery.sizeOf(context).width,
+                margin: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: <Widget>[
+                        Stack(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.black,
+                              backgroundImage: AssetImage('asset/ment_1.png'),
+                              radius: 30.0,
+                            ),
+                            Positioned(
+                              top: 45,
+                              left: 45,
+                              child: Container(
+                                height: 15,
+                                width: 15,
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15 / 2),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Title(
+                            color: Colors.white,
+                            child: TextButton(
+                              child: const Text(
+                                'Xine',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                              onPressed: () {},
                             ))
                       ],
                     )
@@ -115,7 +273,7 @@ class _ProfileAppState extends State<ProfileApp> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.access_alarm),

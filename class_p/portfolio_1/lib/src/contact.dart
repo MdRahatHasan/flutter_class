@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_1/src/loginView.dart';
 
 class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class ContactPage extends StatelessWidget {
                 title: const Text('Address: 1234 Main St, City, Country'),
                 onTap: () {},
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(

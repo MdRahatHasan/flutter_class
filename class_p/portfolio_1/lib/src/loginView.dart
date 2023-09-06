@@ -38,121 +38,160 @@ class _LoginViewState extends State<LoginView> {
           title: const Text('Contact Page'),
         ),
         body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  height: 100,
-                  width: 100,
-                  child: Center(
-                    child: Text(
-                      '${counterMod.values}',
-                      style: const TextStyle(color: Colors.white, fontSize: 28),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 37, 228, 241),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                height: 100,
+                width: 100,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 37, 228, 241),
+                ),
+                child: Center(
+                  child: Text(
+                    '${counterMod.values}',
+                    style: const TextStyle(color: Colors.white, fontSize: 28),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                Container(
-                  width: 250,
-                  child: Center(
-                    child: Row(
-                      children: [
-                        InkWell(
+              ),
+              SizedBox(
+                width: 280,
+                child: Center(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              counterMod.getIncrement();
+                            },
+                            child: const Text(
+                              'Increment',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              counterMod.getDecrement();
+                            },
+                            child: const Text(
+                              'Decrement',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          InkWell(
+                            onDoubleTap: () {
+                              counterMod.getIncrementTow();
+                            },
+                            child: const Text(
+                              'Increment_2',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          InkWell(
+                            onDoubleTap: () {
+                              counterMod.getDecrementTow();
+                            },
+                            child: const Text(
+                              'Decrement_2',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          )
+                        ],
+                      ),
+                      Center(
+                        child: InkWell(
                           onTap: () {
-                            counterMod.getIncrement();
+                            counterMod.getReset();
                           },
                           child: const Text(
-                            'Increment',
+                            'Reset',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),
-                        const SizedBox(
-                          width: 50,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            counterMod.getDecrement();
-                          },
-                          child: const Text(
-                            'Decrement',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
+                      )
+                    ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextField(
-                    controller: namecontroller,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      hintText: 'Enter Your Name',
-                    ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextField(
+                  controller: namecontroller,
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    hintText: 'Enter Your Name',
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextFormField(
-                    controller: emailcontroller,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'Enter Your Email',
-                    ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextFormField(
+                  controller: emailcontroller,
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'Enter Your Email',
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextFormField(
-                    controller: numbercontroller,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'Enter Your Phone Number',
-                    ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextFormField(
+                  controller: numbercontroller,
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'Enter Your Phone Number',
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    _submitform();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80.0),
-                    ),
-                    elevation: 0.0,
-                    padding: const EdgeInsets.all(0),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _submitform();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0),
                   ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                        colors: [Colors.redAccent, Colors.pinkAccent],
-                      ),
-                      borderRadius: BorderRadius.circular(6.0),
+                  elevation: 0.0,
+                  padding: const EdgeInsets.all(0),
+                ),
+                child: Ink(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.centerRight,
+                      end: Alignment.centerLeft,
+                      colors: [Colors.redAccent, Colors.pinkAccent],
                     ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: const Text(
-                        "Submit",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 26.0,
-                          fontWeight: FontWeight.w300,
-                        ),
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Submit",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26.0,
+                        fontWeight: FontWeight.w300,
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

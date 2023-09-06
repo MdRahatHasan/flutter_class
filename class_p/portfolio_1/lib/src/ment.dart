@@ -13,4 +13,19 @@ class FirstController extends ChangeNotifier {
     _values--;
     notifyListeners();
   }
+
+  void getIncrementTow() async {
+    _values += 2;
+    notifyListeners();
+  }
+
+  void getDecrementTow() async {
+    _values -= 2;
+    notifyListeners();
+  }
+
+  void getReset() async {
+    _values = 0;
+    notifyListeners();
+  }
 }

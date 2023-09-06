@@ -180,89 +180,92 @@ class About extends StatelessWidget {
           Container(
             width: 300.00,
             child: ElevatedButton(
-                onPressed: () {
-                  showDialog<String>(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                      title: const Text('Alert!'),
-                      content: const Text('Are you want to contact me!'),
-                      actions: <Widget>[
-                        TextButton(
-                          // onPressed: () => Navigator.pop(context, 'Cancel'),
-                          onPressed: () {
-                            Navigator.pop(context, 'Cancel');
-                            Fluttertoast.showToast(
-                              msg: 'Cancel',
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 2,
-                              backgroundColor: Colors.grey,
-                              textColor: Colors.white,
-                              fontSize: 15,
-                            );
-                          },
-                          child: const Text('Cancel'),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            // final snackBar = SnackBar(
-                            //     content: const Text('you are approved'),
-                            //     action: SnackBarAction(
-                            //         label: 'ok', onPressed: () {}));
-                            Fluttertoast.showToast(
-                              msg: 'you are approved',
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 2,
-                              backgroundColor: Colors.grey,
-                              textColor: Colors.white,
-                              fontSize: 15,
-                            );
-                            Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => ContactPage(),
-                              ),
-                            );
-                            // ScaffoldMessenger.of(context)
-                            //     .showSnackBar(snackBar);
-                          },
-                          child: const Text('OK'),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(80.0),
+              onPressed: () {
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Alert!'),
+                    content: const Text('Are you want to contact me!'),
+                    actions: <Widget>[
+                      TextButton(
+                        // onPressed: () => Navigator.pop(context, 'Cancel'),
+                        onPressed: () {
+                          Navigator.pop(context, 'Cancel');
+                          Fluttertoast.showToast(
+                            msg: 'Cancel',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 2,
+                            backgroundColor: Colors.grey,
+                            textColor: Colors.white,
+                            fontSize: 15,
+                          );
+                        },
+                        child: const Text('Cancel'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          // final snackBar = SnackBar(
+                          //     content: const Text('you are approved'),
+                          //     action: SnackBarAction(
+                          //         label: 'ok', onPressed: () {}));
+                          Fluttertoast.showToast(
+                            msg: 'you are approved',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 2,
+                            backgroundColor: Colors.grey,
+                            textColor: Colors.white,
+                            fontSize: 15,
+                          );
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ContactPage()));
+                          // Navigator.push(
+                          //   context,
+                          //   CupertinoPageRoute(
+                          //     builder: (context) => ContactPage(),
+                          //   ),
+                          // );
+                          // ScaffoldMessenger.of(context)
+                          //     .showSnackBar(snackBar);
+                        },
+                        child: const Text('OK'),
+                      ),
+                    ],
                   ),
-                  elevation: 0.0,
-                  padding: const EdgeInsets.all(0.0),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(80.0),
                 ),
-                child: Ink(
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                        colors: [Colors.redAccent, Colors.pinkAccent]),
-                    borderRadius: BorderRadius.circular(20.0),
+                elevation: 0.0,
+                padding: const EdgeInsets.all(0.0),
+              ),
+              child: Ink(
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                      begin: Alignment.centerRight,
+                      end: Alignment.centerLeft,
+                      colors: [Colors.redAccent, Colors.pinkAccent]),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Container(
+                  constraints: const BoxConstraints(
+                    maxWidth: 300.0,
+                    minHeight: 50.0,
                   ),
-                  child: Container(
-                    constraints: const BoxConstraints(
-                      maxWidth: 300.0,
-                      minHeight: 50.0,
-                    ),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      "Contact me",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 26.0,
-                          fontWeight: FontWeight.w300),
-                    ),
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Contact me",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26.0,
+                        fontWeight: FontWeight.w300),
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
         ],
       ),

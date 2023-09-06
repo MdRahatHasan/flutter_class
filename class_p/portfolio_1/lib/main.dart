@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_1/src/about.dart';
 import 'package:portfolio_1/src/home.dart';
+import 'package:portfolio_1/src/ment.dart';
 import 'package:portfolio_1/src/menu.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => FirstController()),
+        ],
+        child: MaterialApp(
+          theme: ThemeData(
+            useMaterial3: true,
 
-        // Define the default brightness and colors.
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
-          // ···
-          brightness: Brightness.dark,
+            // Define the default brightness and colors.
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.purple,
+              // ···
+              brightness: Brightness.dark,
+            ),
+          ),
+          debugShowCheckedModeBanner: false,
+          home: const ProfileApp(),
         ),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const ProfileApp(),
-    ));
+    );
 
 class ProfileApp extends StatefulWidget {
   const ProfileApp({super.key});

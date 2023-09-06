@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:portfolio_1/src/ment.dart';
-import 'package:toast/toast.dart';
 import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
@@ -21,10 +21,25 @@ class _LoginViewState extends State<LoginView> {
     var number = numbercontroller.text;
 
     if (name.isEmpty || email.isEmpty || number.isEmpty) {
-      Toast.show("Toast plugin app",
-          duration: Toast.lengthShort, gravity: Toast.bottom);
+      Fluttertoast.showToast(
+        msg: 'Enter all data!',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white,
+        fontSize: 15,
+      );
     } else {
-      Toast.show('Done', duration: Toast.lengthShort, gravity: Toast.bottom);
+      Fluttertoast.showToast(
+        msg: 'Done',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white,
+        fontSize: 15,
+      );
     }
   }
 
@@ -64,6 +79,15 @@ class _LoginViewState extends State<LoginView> {
                         children: [
                           InkWell(
                             onTap: () {
+                              Fluttertoast.showToast(
+                                msg: 'Increment 1',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 15,
+                              );
                               counterMod.getIncrement();
                             },
                             child: const Text(
@@ -76,6 +100,15 @@ class _LoginViewState extends State<LoginView> {
                           ),
                           InkWell(
                             onTap: () {
+                              Fluttertoast.showToast(
+                                msg: 'Decrement 1',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 15,
+                              );
                               counterMod.getDecrement();
                             },
                             child: const Text(
@@ -89,6 +122,15 @@ class _LoginViewState extends State<LoginView> {
                         children: [
                           InkWell(
                             onDoubleTap: () {
+                              Fluttertoast.showToast(
+                                msg: 'Increment 2',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 15,
+                              );
                               counterMod.getIncrementTow();
                             },
                             child: const Text(
@@ -101,6 +143,15 @@ class _LoginViewState extends State<LoginView> {
                           ),
                           InkWell(
                             onDoubleTap: () {
+                              Fluttertoast.showToast(
+                                msg: 'Decrement 2',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 15,
+                              );
                               counterMod.getDecrementTow();
                             },
                             child: const Text(
@@ -113,6 +164,15 @@ class _LoginViewState extends State<LoginView> {
                       Center(
                         child: InkWell(
                           onTap: () {
+                            Fluttertoast.showToast(
+                              msg: 'Reset To 0',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.grey,
+                              textColor: Colors.white,
+                              fontSize: 15,
+                            );
                             counterMod.getReset();
                           },
                           child: const Text(

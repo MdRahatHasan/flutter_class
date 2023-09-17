@@ -223,12 +223,11 @@ class _LoginViewState extends State<LoginView> {
                   _submitform();
                 },
                 style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(80.0),
-                  ),
-                  elevation: 0.0,
-                  padding: const EdgeInsets.all(0),
-                ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0),
+                    ),
+                    elevation: 0.0,
+                    padding: EdgeInsets.all(8.0)),
                 child: Ink(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
@@ -239,6 +238,7 @@ class _LoginViewState extends State<LoginView> {
                     borderRadius: BorderRadius.circular(6.0),
                   ),
                   child: Container(
+                    height: 45,
                     alignment: Alignment.center,
                     child: const Text(
                       "Submit",

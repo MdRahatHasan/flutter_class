@@ -208,6 +208,7 @@ class About extends StatelessWidget {
                           //     content: const Text('you are approved'),
                           //     action: SnackBarAction(
                           //         label: 'ok', onPressed: () {}));
+                          Navigator.pop(context, 'OK');
                           Fluttertoast.showToast(
                             msg: 'you are approved',
                             toastLength: Toast.LENGTH_SHORT,
@@ -217,6 +218,7 @@ class About extends StatelessWidget {
                             textColor: Colors.white,
                             fontSize: 15,
                           );
+
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => ContactPage()));
                           // Navigator.push(

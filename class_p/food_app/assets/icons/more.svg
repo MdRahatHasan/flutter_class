@@ -1,0 +1,6 @@
+<svg id="Dots_24px" data-name="Dots 24px" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <circle id="Dot" cx="3.333" cy="3.333" r="3.333" transform="translate(9.167 9.167)" fill="#e84c4f"/>
+  <ellipse id="Dot-2" data-name="Dot" cx="3.333" cy="3.333" rx="3.333" ry="3.333" transform="translate(9.167 24.167)" fill="#e84c4f"/>
+  <ellipse id="Dot-3" data-name="Dot" cx="3.333" cy="3.333" rx="3.333" ry="3.333" transform="translate(24.167 9.167)" fill="#e84c4f"/>
+  <circle id="Dot-4" data-name="Dot" cx="3.333" cy="3.333" r="3.333" transform="translate(24.167 24.167)" fill="#e84c4f"/>
+</svg>

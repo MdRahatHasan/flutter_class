@@ -5,7 +5,7 @@ import 'package:json_test/pages/user_profile.dart';
 import 'package:json_test/services/user_api.dart';
 
 class Post extends StatefulWidget {
-  Post({super.key});
+  const Post({super.key});
 
   @override
   State<Post> createState() => _PostState();
